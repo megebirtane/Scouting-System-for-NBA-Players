@@ -1,5 +1,7 @@
 ### *🏀 Scouting System for NBA Players*
 
+## 🚀 Live Demo: Check out the interactive app here
+
 ### *Leveraging Machine Learning to Redefine Player Performance Evaluation*
 
 In the modern era of sports, where the margin for error has narrowed and the quest for individual excellence has intensified, traditional box scores are no longer sufficient. This project introduces a data-driven approach to player scouting, moving beyond simple box-score analysis by implementing a **Customized Efficiency Rating (CER)** and advanced Machine Learning algorithms.
