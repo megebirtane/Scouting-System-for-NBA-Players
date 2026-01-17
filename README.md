@@ -1,4 +1,37 @@
-In today’s world as every profession tends to become more professional and efficient, the world of sports has become a major financial giant with these innovations. As this expansion continues, the margin of error has been narrowed for both athletes and teams. Desire of excellence has pushed these athletes and teams to find ways to evaluate performances of individuals and gain a general understanding of their performance. As for the basketball, this quest for individual analysis had started when NBA introduced us with the “box score”, where officials kept every player’s point, rebound assist etc. to evaluate each player’s performance after a match just by looking at stat sheet. For quite some time, this method was enough for the coaches, team managements and fans but as the industry grew and become more competitive over the years, these metrics weren’t satisfying anyone. So, stat analysts came with the idea of advanced metrics and data analytics. These innovations helped team managements and coaches to work more efficiently and bring their team success. 
- This project aims in a similar way, enhancing the analysis of NBA players by introducing a customized metric, Customized Efficiency Rating (CER), aiming to reflect more accurate results than the traditional statistics. The primary object of this project is to classify NBA players who were selected as All-Star players throughout 2019 to 2024 into three performance categories: MVP caliber, All-NBA Caliber and All-Star Caliber. This classification helps us to distinguish players who are top performers, solid contributor, and standout talents within all of the All-Star selections.
- By using the machine learning techniques and a dataset consist of All-Star players of 2019-2024, this project seeks to create a data-driven approach to predict player efficiency. With classification, not only helps us to have a better player assessment but also helps enhancing decision making processes related to scouting and contract negotiations procedure.
- In this report, I’ll be showing the processes of creating a dataset, developing the efficiency metric, implementing machine learning models and experimental results.
+🏀 Scouting System for NBA Players
+
+Leveraging Machine Learning to Redefine Player Performance Evaluation
+
+ In the modern era of sports, where the margin for error has narrowed and the quest for individual excellence has intensified, traditional box scores are no longer sufficient. This project introduces a data-driven approach to player scouting, moving beyond simple box-score analysis by implementing a Customized Efficiency Rating (CER) and advanced Machine Learning algorithms.
+
+The primary objective is to classify NBA All-Star players (from the 2019 to 2024 seasons) into three distinct performance tiers: **MVP**, **All-NBA**, and **All-Star** calibers.
+
+## 🚀 Key Features
+* **Customized Efficiency Rating (CER):** A proprietary metric developed to reflect on-court impact more accurately than traditional statistics.
+* **Logarithmic Games-Played Adjustment:** CEM scores are refined using `np.log(games_played)` to balance peak performance with season-long durability.
+* **Hybrid ML Pipeline:** Integration of Unsupervised Learning (**K-Means**) for cluster discovery and Supervised Learning (**Random Forest**) for precise classification.
+* **Robust Validation:** Deployment of K-Fold and Leave-One-Out (LOO) cross-validation techniques to ensure model stability and generalizability.
+
+## 🛠 Tech Stack
+* **Language:** Python
+* **Libraries:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+* **Algorithms:** Random Forest Classifier, K-Means Clustering, Logistic Regression (for baseline comparison)
+* **Optimization:** Hyperparameter Tuning via Grid Search (over 600 fits)
+
+## 📊 The CER Metric & Methodology
+To bridge the gap in traditional analytics, this project utilizes a weighted formula that emphasizes efficiency and versatile contributions:
+
+$$CER = \\frac{(0.35 \cdot PTS_{n} + 0.20 \cdot RPG_{n} + 0.20 \cdot APG_{n} + 0.10 \cdot FG\%_{n} + 0.05 \cdot (SPG_{n} + BPG_{n} + FT\%_{n}) - 0.10 \cdot TOV_{n})}{GP}$$
+
+*The raw score is further adjusted by the natural logarithm of games played to account for the "diminishing returns" of volume over duration.*
+
+## 🧠 Experimental Results & Validation
+The model demonstrates exceptional robustness and predictive power:
+
+* **Model Accuracy:** Achieved a **93.3% Mean K-Fold Cross-Validation** score and a **96.6% Leave-One-Out (LOO)** accuracy.
+* **Precision Performance:** Attained a **1.00 Precision for MVP Caliber** classification, effectively identifying top-tier candidates without false positives.
+* **Optimal Configuration:** Through Hyperparameter Tuning, the Random Forest model was optimized at `n_estimators=50` and `max_features='sqrt'`.
+
+## 📈 Conclusion
+This project proves that Machine Learning can significantly enhance sports analytics by identifying performance patterns that are often missed by the naked eye. The success of the CER metric in differentiating player tiers demonstrates the potential for these algorithms to positively influence scouting and team management strategies in professional basketball.
+
