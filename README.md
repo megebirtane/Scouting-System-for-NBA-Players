@@ -21,9 +21,23 @@ The primary objective is to classify NBA All-Star players (from the 2019 to 2024
 * **Optimization:** Hyperparameter Tuning via Grid Search (over 600 fits)
 
 ## 📊 The CER Metric & Methodology
+
+The formula is designed to balance offensive production, efficiency, and defensive impact:
+
+Primary Contributors (75%): Points (35%), Rebounds (20%), and Assists (20%) form the core of the rating.
+
+Efficiency & Defense (25%): Field Goal % (10%), Free Throw % (5%), Steals (5%), and Blocks (5%) are integrated to reward two-way performance and efficient scoring.
+
+Turnover Penalty (-10%): A dedicated penalty for Turnovers (TO) to account for ball security and offensive reliability.
+
+Sustainability Factor: By multiplying the raw score with the natural logarithm of Games Played, the metric rewards players who maintain high performance levels throughout the entire season, acknowledging that durability is a key component of an MVP-caliber season.
+
 To bridge the gap in traditional analytics, this project utilizes a weighted formula that emphasizes efficiency and versatile contributions:
 
-$$CER = \\frac{(0.35 \cdot PTS_{n} + 0.20 \cdot RPG_{n} + 0.20 \cdot APG_{n} + 0.10 \cdot FG\%_{n} + 0.05 \cdot (SPG_{n} + BPG_{n} + FT\%_{n}) - 0.10 \cdot TOV_{n})}{GP}$$
+$$CEM_{raw} = (0.35 \cdot PPG_{n}) + (0.20 \cdot RPG_{n}) + (0.20 \cdot APG_{n}) + (0.10 \cdot FG\%_{n}) + (0.05 \cdot (SPG_{n} + BPG_{n} + FT\%_{n})) - (0.10 \cdot TO_{n})$$
+
+$$Final\ CEM = CEM_{raw} \times \ln(Games\ Played)$$
+
 
 *The raw score is further adjusted by the natural logarithm of games played to account for the "diminishing returns" of volume over duration.*
 
