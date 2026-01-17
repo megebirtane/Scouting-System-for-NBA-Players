@@ -1,6 +1,6 @@
 ### *🏀 Scouting System for NBA Players*
 
-🚀 Live Demo: Check out the interactive app here --> https://scouting-system-for-nba-players-9gcv5t5mgrmv6nbfjaxjr6.streamlit.app
+🚀 **Live Demo:** [Check out the interactive app here](https://scouting-system-for-nba-players-9gcv5t5mgrmv6nbfjaxjr6.streamlit.app)
 
 ### *Leveraging Machine Learning to Redefine Player Performance Evaluation*
 
