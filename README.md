@@ -1,5 +1,4 @@
-# README içeriğini bir txt dosyasına yazma işlemi
-readme_content = """# 🏀 Scouting System for NBA Players (2019-2024)
+### *🏀 Scouting System for NBA Players*
 
 ### *Leveraging Machine Learning to Redefine Player Performance Evaluation*
 
